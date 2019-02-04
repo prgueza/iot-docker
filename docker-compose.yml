@@ -10,6 +10,8 @@ services:
       - NODE_ENV=production
     ports:
       - '4000:4000'
+    volume:
+      - img:/img
     networks:
       - iot-net
   iot-db:
@@ -19,6 +21,8 @@ services:
       - MONGO_INITDB_DATABASE=application
     ports:
       - '27017:27017'
+    volume:
+      - database:/data/db
     networks:
       - iot-net
 
