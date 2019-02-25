@@ -1,4 +1,4 @@
-db.userGroups.insert({
+db.usergroups.insert({
   createdAt: new Date(),
   updatedAt: new Date(),
   name: "Administración General",
@@ -11,10 +11,10 @@ db.userGroups.insert({
   __v: 0
 })
 
-const userGroup_id = db.userGroups.findOne()._id
-const userGroup_url = "http://iot-db:4000/userGroups/" + userGroup_id
+const usergroup_id = db.usergroups.findOne()._id
+const usergroup_url = "http://iot-db:4000/userGroups/" + usergroup_id
 
-db.userGroups.update({ _id: userGroup_id}, { $set: { url: userGroup_url } })
+db.usergroups.update({ _id: usergroup_id}, { $set: { url: usergroup_url } })
 
 db.users.insert({
   admin: "true",
@@ -34,4 +34,4 @@ const user_url = "http://iot-db:4000/users/" + user_id
 
 db.users.update({ _id: user_id}, { $set: { url: user_url } })
 
-db.userGroups.update({ _id: userGroup_id }, { $addToSet: { users: user_id } })
+db.usergroups.update({ _id: usergroup_id }, { $addToSet: { users: user_id } })

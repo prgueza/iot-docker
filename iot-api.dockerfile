@@ -14,4 +14,4 @@ RUN npm install
 # Unprivileged user
 USER node
 # Run the app
-CMD ["node", "./server.js"]
+CMD ["node", "./bin/www"]

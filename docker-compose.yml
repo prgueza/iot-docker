@@ -1,6 +1,16 @@
 version: '3.1'
 
 services:
+  iot-frontend:
+    image: prodalia/iot-frontend
+    container_name: iot-frontend
+    environment:
+      - API_URL=http://iot-db:27017
+      - NODE_ENV=production
+    ports:
+      - '3000:3000'
+    networks:
+      - iot-net
   iot-api:
     image: prodalia/iot-api
     container_name: iot-api

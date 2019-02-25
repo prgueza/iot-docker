@@ -6,12 +6,11 @@ ENV PORT=$PORT
 EXPOSE $PORT
 # Update npm to its latest version
 RUN npm i npm@latest -g
-# Copy directory and install dependencies from the project
+# Clone repository
+RUN git clone --single-branch --branch refactoring https://github.com/pedro-rodalia/iot-frontend.git
+# Move to the directory and install dependencies from the project
 WORKDIR /iot-frontend
-COPY package.json ./
-RUN npm install
-# Copy the source code
-COPY . .
+RUN npm install && npm run build
 # Unprivileged user
 USER node
 # Run the app
