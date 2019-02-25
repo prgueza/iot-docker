@@ -12,7 +12,7 @@ db.usergroups.insert({
 })
 
 const usergroup_id = db.usergroups.findOne()._id
-const usergroup_url = "http://iot-db:4000/userGroups/" + usergroup_id
+const usergroup_url = "http://iot-db:4000/usergroups/" + usergroup_id
 
 db.usergroups.update({ _id: usergroup_id}, { $set: { url: usergroup_url } })
 
@@ -26,7 +26,7 @@ db.users.insert({
   createdAt: new Date(),
   updatedAt: new Date(),
   __v: 0,
-  userGroup: userGroup_id
+  userGroup: usergroup_id
 })
 
 const user_id = db.users.findOne()._id
