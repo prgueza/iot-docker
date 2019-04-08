@@ -8,9 +8,7 @@ services:
       - API_URL=http://iot-db:27017
       - NODE_ENV=production
     ports:
-      - '3000:3000'
-    networks:
-      - iot-net
+      - '80:3000'
   iot-api:
     image: prodalia/iot-api
     container_name: iot-api
@@ -20,7 +18,7 @@ services:
       - NODE_ENV=production
     ports:
       - '4000:4000'
-    volume:
+    volumes:
       - img:/img
     networks:
       - iot-net
@@ -29,12 +27,14 @@ services:
     container_name: iot-db
     environment:
       - MONGO_INITDB_DATABASE=application
-    ports:
-      - '27017:27017'
-    volume:
+    volumes:
       - database:/data/db
     networks:
       - iot-net
 
 networks:
   iot-net:
+
+volumes:
+  img:
+  database:
