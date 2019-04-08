@@ -1,0 +1,24 @@
+{
+  "name": "iot-docker",
+  "version": "1.0.0",
+  "description": "Repositorio con los archivos necesarios para el despliegue de la plataforma iot-inpaink a través de Docker",
+  "main": "seed-data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedro-rodalia/iot-docker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedro-rodalia/iot-docker/issues"
+  },
+  "homepage": "https://github.com/pedro-rodalia/iot-docker#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
