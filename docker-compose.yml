@@ -5,7 +5,7 @@ services:
     image: prodalia/iot-frontend
     container_name: iot-frontend
     environment:
-      - API_URL=http://iot-db:27017
+      - API_URL=http://iot-api:4000
       - NODE_ENV=production
     ports:
       - '80:3000'
@@ -13,8 +13,6 @@ services:
     image: prodalia/iot-api
     container_name: iot-api
     environment:
-      - MONGO_ENV=local
-      - API_URL=http://iot-db:27017
       - NODE_ENV=production
     ports:
       - '4000:4000'
