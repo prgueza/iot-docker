@@ -6,4 +6,4 @@ RUN apt-get update && apt-get install wget
 ENV MONGO_INITDB_DATABASE=application
 # Get seed data so it can initialize the db
 WORKDIR /docker-entrypoint-initdb.d/
-RUN wget https://raw.githubusercontent.com/pedro-rodalia/iot-docker/dockerfiles/seed-data.js
+RUN wget https://raw.githubusercontent.com/pedro-rodalia/iot-docker/master/seed-data.js
