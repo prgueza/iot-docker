@@ -20,8 +20,6 @@ services:
   iot-db:
     image: prodalia/iot-db:latest
     container_name: iot-db
-    environment:
-      - MONGO_INITDB_DATABASE=application
     volumes:
       - database:/data/db
     networks:
