@@ -1,5 +1,5 @@
 # Source image
-FROM node
+FROM node:10.15.0
 # Set environment port and expose it
 ARG PORT=4000
 ENV PORT=$PORT
